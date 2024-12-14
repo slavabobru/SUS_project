@@ -10,5 +10,7 @@ public class Money_Script : MonoBehaviour
     void Update()
     {
         transform.Rotate(Vector3.left * Time.deltaTime * rotationSpeed);
+
     }
+    
 }

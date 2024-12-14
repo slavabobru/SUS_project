@@ -10,6 +10,8 @@ public class NewBehaviourScript : MonoBehaviour
     public Rigidbody rb;
     public bool ifonland;
     public bool funtime;
+    public GameObject player_st_pos;
+    public GameObject player;
 
     // Update is called once per frame
     void Update()
@@ -29,7 +31,7 @@ public class NewBehaviourScript : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.F))
         {
-            transform.Rotate(0, 0, -90);
+            player.transform.rotation = player_st_pos.transform.rotation;
         }
         if (Input.GetKey(KeyCode.Space) && ifonland == true)
         {
@@ -40,10 +42,23 @@ public class NewBehaviourScript : MonoBehaviour
             else
                 ifonland = true;
         }
+        if (Input.GetKey(KeyCode.R))
+        {
+            player.transform.position = player_st_pos.transform.position;
+            player.transform.rotation = player_st_pos.transform.rotation;
+        }
     }
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("land"))
+        {
             ifonland = true;
+        }
+            
+        if (collision.gameObject.CompareTag("consumable"))
+        {
+            Debug.Log("MONEY IS CONSUMABLE");
+            Destroy(collision.gameObject);
+        }
     }
 }
