@@ -55,7 +55,7 @@ public class NewBehaviourScript : MonoBehaviour
             ifonland = true;
         }
             
-        if (collision.gameObject.CompareTag("consumable"))
+        if (collision.gameObject.CompareTag("SmallCoin"))
         {
             Debug.Log("MONEY IS CONSUMABLE");
             Destroy(collision.gameObject);

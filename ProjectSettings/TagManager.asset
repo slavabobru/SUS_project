@@ -6,6 +6,8 @@ TagManager:
   tags:
   - land
   - consumable
+  - Deadly
+  - SmallCoin
   layers:
   - Default
   - TransparentFX
