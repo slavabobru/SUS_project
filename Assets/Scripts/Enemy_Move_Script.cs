@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class Enemy_Move_Script : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private Transform plPos;
+    private Vector3 direction;
+    public float enSpeed = 3f;
+    public float attackRng = 3f;
+    private float plDistance;
+
     void Start()
     {
-        
+        plPos = GameObject.Find("SUS");
     }
 
     // Update is called once per frame

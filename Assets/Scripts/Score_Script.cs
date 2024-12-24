@@ -6,7 +6,7 @@ using TMPro;
 public class Score_Script : MonoBehaviour
 {
     public int ScoreCount;
-    public TextMeshUGUI ScoreText;
+    public TextMeshGUI ScoreText;
     void Start()
     {
         ScoreCount = 0;
