@@ -7,7 +7,7 @@ public class Enemy_Move_Script : MonoBehaviour
     private Transform plPos;
     private Vector3 direction;
     public float enSpeed = 4f;
-    public float attackRng = 5f;
+    public float attackRng = 8f;
     private float plDistance;
 
     void Start()
