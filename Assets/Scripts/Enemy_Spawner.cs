@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy_Spawner : MonoBehaviour
 {
     public GameObject enemy;
+    private int enemy_count;
     public GameObject coin;
     public GameObject[] islands;
 
@@ -14,12 +15,14 @@ public class Enemy_Spawner : MonoBehaviour
 
         for (int i = 0; i < islands.Length; i++)
         {
-            Vector3 position = islands[i].transform.position + new Vector3(Random.Range(0, 3), Random.Range(0, 3), Random.Range(0, 3));
-            Instantiate(enemy, position, Quaternion.identity);
-            position = islands[i].transform.position + new Vector3(Random.Range(0, 3), Random.Range(0, 3), Random.Range(0, 3));
-            Instantiate(enemy, position, Quaternion.identity);
-            position = islands[i].transform.position + new Vector3(Random.Range(0, 3), Random.Range(0, 3), Random.Range(0, 3));
-            Instantiate(coin, position, coin.transform.rotation);
+            enemy_count = Random.Range(0, 2);
+            for (int xi = 0; xi < enemy_count; xi++)
+            {
+                Vector3 position = islands[i].transform.position + new Vector3(Random.Range(0, 2), 2, Random.Range(0, 2));
+                Instantiate(enemy, position, Quaternion.identity);
+                position = islands[i].transform.position + new Vector3(Random.Range(0, 1), 1, Random.Range(0, 1));
+                Instantiate(coin, position, coin.transform.rotation);
+            }
         }
     }
 }

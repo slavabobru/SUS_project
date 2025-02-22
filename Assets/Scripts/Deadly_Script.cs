@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Deadly_Script : MonoBehaviour
 {
-
+    public GameObject GameoverScreen;
     public GameObject player_st_pos;
     public GameObject player;
     // Update is called once per frame
@@ -18,6 +18,7 @@ public class Deadly_Script : MonoBehaviour
         {
             player.transform.position = player_st_pos.transform.position;
             player.transform.rotation = player_st_pos.transform.rotation;
+            GameoverScreen.SetActive(true);
         }
     }
 }
